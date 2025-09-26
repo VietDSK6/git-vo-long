@@ -21,6 +21,9 @@
     
     <p>Giới hạn tối đa: <b>100</b></p>
     <p>Giờ hiện tại: <span id="clock"></span></p>
+
+    <!-- chỗ để hiển thị câu slogan -->
+    <p id="slogan" style="font-weight: bold; margin-top: 15px;"></p>
   </div>
 
   <script>
@@ -29,11 +32,24 @@
 
     if(localStorage.getItem("count")){
       count = parseInt(localStorage.getItem("count"));
-      document.getElementById("number").textContent = count;
+      updateDisplay();
     }
 
     function updateDisplay() {
-      document.getElementById("number").textContent = count;
+      let displayText = count;
+      let sloganText = "";
+
+      if (count === 36) {
+        displayText = "Thanh Hóa";
+        sloganText = "Ăn rau má phá đường tàu";
+      } else if (count === 18) {
+        displayText = "Nam Định";
+        sloganText = "12 cái ví mất cùng 1 đêm";
+      }
+
+      document.getElementById("number").textContent = displayText;
+      document.getElementById("slogan").textContent = sloganText;
+
       localStorage.setItem("count", count);
     }
 
@@ -56,10 +72,10 @@
     }
 
     function increaseBy(n) {
-        count += n;       
-        updateDisplay();    
-        playClick();        
-        randomColor();       
+      count += n;       
+      updateDisplay();    
+      playClick();        
+      randomColor();       
     }
 
     function resetNumber() {
@@ -86,10 +102,9 @@
     }
 
     function randomColor() {
-        let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
-        
-        document.getElementById("number").style.color = randomColor;
-      }
+      let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+      document.getElementById("number").style.color = randomColor;
+    }
 
     function playClick() {
       let audio = new Audio("https://www.soundjay.com/buttons/sounds/button-16.mp3");
