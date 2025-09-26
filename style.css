@@ -1,0 +1,71 @@
+/* Căn giữa toàn màn hình */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f2f5;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  /* Khung tổng */
+  .container {
+    background: #fff;
+    border: 3px solid #ccc;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* Số hiển thị */
+  #number {
+    font-size: 50px;
+    margin: 20px;
+    display: block;
+    color: #333;
+    font-weight: bold;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  /* Nút */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    background: #4CAF50;
+    border: 2px solid #388E3C;
+    color: white;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+  }
+  
+  /* Nút màu riêng */
+  button:nth-child(3) { background: #2196F3; border-color: #1976D2; }
+  button:nth-child(4) { background: #ff9800; border-color: #e68900; }
+  button:nth-child(5) { background: #9c27b0; border-color: #7b1fa2; }
+  button:nth-child(6) { background: #f44336; border-color: #d32f2f; }
+  button:nth-child(7) { background: #555; border-color: #333; }
+  
+  /* Dark mode */
+  .dark {
+    background: #222;
+    color: white;
+  }
+  .dark .container {
+    background: #333;
+    border-color: #666;
+  }
+  
