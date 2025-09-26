@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tăng số</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #number {
+      font-size: 40px;
+      margin: 20px;
+      display: block;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <span id="number">0</span>
+  <button onclick="increaseNumber()">Nhấn để tăng</button>
+
+  <script>
+    let count = 0;
+    function increaseNumber() {
+      count++;
+      document.getElementById("number").textContent = count;
+    }
+  </script>
+
+</body>
+</html>
